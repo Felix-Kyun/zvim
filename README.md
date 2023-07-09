@@ -6,8 +6,6 @@
 <h2>Project Screenshots:</h2>
 
 * ### Dashboard
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/dashboard.png?raw=true" alt="project-screenshot" width="720" height="400/">
-
     ![dashboard](https://github.com/Felix-Kyun/zvim/blob/master/assets/dashboard.png?raw=true)
 
 * ### Syntax Highlighting
