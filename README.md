@@ -9,26 +9,26 @@
     ![dashboard](https://github.com/Felix-Kyun/zvim/blob/master/assets/dashboard.png?raw=true)
 
 * ### Syntax Highlighting
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/code_highlighting.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![code highlighting](https://github.com/Felix-Kyun/zvim/blob/master/assets/code_highlighting.png?raw=true)
 
 * ### Auto Complete
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/code_suggestions.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![ncim cmp](https://github.com/Felix-Kyun/zvim/blob/master/assets/code_suggestions.png?raw=true)
 
 * ### Telescope 
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/telescope.png?raw=true" alt="project-screenshot" width="720" height="400/">
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/telescope_2.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![telescope 1](https://github.com/Felix-Kyun/zvim/blob/master/assets/telescope.png?raw=true)
+    ![telescope 2](https://github.com/Felix-Kyun/zvim/blob/master/assets/telescope_2.png?raw=true)
 
 * ### Terminal
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/terminal.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![terminal](https://github.com/Felix-Kyun/zvim/blob/master/assets/terminal.png?raw=true)
 
 * ### Todo Highlighting
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/todo_feature.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![todo](https://github.com/Felix-Kyun/zvim/blob/master/assets/todo_feature.png?raw=true)
 
 * ### Mason.nvim
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/Mason.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![mason](https://github.com/Felix-Kyun/zvim/blob/master/assets/Mason.png?raw=true)
 
 * ### Which Key
-    <img src="https://github.com/Felix-Kyun/zvim/blob/master/assets/which_key.png?raw=true" alt="project-screenshot" width="720" height="400/">
+    ![which key](https://github.com/Felix-Kyun/zvim/blob/master/assets/which_key.png?raw=true)
 
   
   
