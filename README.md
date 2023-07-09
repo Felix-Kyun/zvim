@@ -1,7 +1,6 @@
 <h1 align="center" id="title">ZVim</h1>
 
-<p align="center"><img src="https://socialify.git.ci/Felix-Kyun/zvim/image?description=1&amp;font=KoHo&amp;forks=1&amp;issues=1&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;pulls=1&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
-
+![zvim](https://socialify.git.ci/Felix-Kyun/zvim/image?description=1&font=KoHo&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark)
 <p id="description">Fast Minimal And Usable</p>
 
 <h2>Project Screenshots:</h2>
