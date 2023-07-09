@@ -56,8 +56,8 @@ Here're some of the project's best features:
 
 <p>1. Clone the repo to nvim config dir</p>
 
-```
-git clone https://github.com/Felix-Kyun/zvim
+```bash
+git clone https://github.com/Felix-Kyun/zvim ~/.config/nvim/
 ```
 
 <p>2. and fire up nvim</p>
@@ -73,7 +73,8 @@ nvim
 Technologies used in the project:
 
 *   everyone's favorite lua chan! 😽
-*   beloved neovim ❤️
+*   beloved neovim kyun ❤️
+*   all time favorite control key to copy config
 
 <h2>🛡️ License:</h2>
 
