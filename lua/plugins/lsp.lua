@@ -4,6 +4,7 @@ return {
   dependencies = {
     -- LSP Support
     { 'neovim/nvim-lspconfig' }, -- Required
+    { "onsails/lspkind.nvim" },
     {                            -- Optional
       'williamboman/mason.nvim',
       build = function()
