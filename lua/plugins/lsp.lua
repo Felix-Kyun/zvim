@@ -148,12 +148,12 @@ return {
         ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })
       }
     })
-    cmp.setup.cmdline({ '/', '?' }, {
+    --[[ cmp.setup.cmdline({ '/', '?' }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer' }
       }
-    })
+    }) ]]
     --[[ cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({

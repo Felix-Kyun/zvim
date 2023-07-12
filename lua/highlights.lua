@@ -33,9 +33,9 @@ local highlight_list = {
   NeoTreeRootName = { fg = c.snow_storm.origin, bold = true },
   NeoTreeSymbolicLinkTarget = { fg = c.frost.artic_water },
   NeoTreeTabActive = { fg = c.snow_storm.origin, bg = c.polar_night.brighter, bold = true },
-  NeoTreeTabInactive = { fg = c.polar_night.light, bg = global_bg },
+  --[[ NeoTreeTabInactive = { fg = c.polar_night.light, bg = global_bg },
   NeoTreeTabSeparatorActive = { fg = c.polar_night.brighter, bg = global_bg },
-  NeoTreeTabSeparatorInactive = { fg = c.polar_night.origin, bg = global_bg },
+  NeoTreeTabSeparatorInactive = { fg = c.polar_night.origin, bg = global_bg }, ]]
 }
 
 for group, hl in pairs(highlight_list) do

@@ -9,19 +9,24 @@ return {
         {
           '<leader>',
           {
-            { '?',  ':WhichKey<CR>' },
-            { 's',  ':source %<CR>' },
-            { 'ff', ':lua require"telescope.builtin".find_files({no_ignore=true, hidden=true})<CR>' },
-            { 'fd', ':Telescope live_grep<CR>' },
-            { 'u',  ':Lazy<CR>' },
-            { 'e',  ':TroubleToggle<CR>' },
-            { 'zn', ':TZNarrow<CR>' },
-            { 'zf', ':TZFocus<CR>' },
-            { 'zm', ':TZMinimalist<CR>' },
-            { 'za', ':TZAtaraxis<CR>' },
-            { 'qs', [[<cmd>lua require("persistence").load()<cr>]] },
-            { 'ql', [[<cmd>lua require("persistence").load({ last = true })<cr>]] },
-            { 'qd', [[<cmd>lua require("persistence").stop()<cr>]] },
+            { '?',     ':WhichKey<CR>' },
+            { 's',     ':source %<CR>' },
+            { 'ff',    ':lua require"telescope.builtin".find_files({no_ignore=true, hidden=true})<CR>' },
+            { 'fd',    ':Telescope live_grep<CR>' },
+            { 'u',     ':Lazy<CR>' },
+            { 'e',     ':TroubleToggle<CR>' },
+            { 'zn',    ':TZNarrow<CR>' },
+            { 'zf',    ':TZFocus<CR>' },
+            { 'zm',    ':TZMinimalist<CR>' },
+            { 'za',    ':TZAtaraxis<CR>' },
+            { 'qs',    [[<cmd>lua require("persistence").load()<cr>]] },
+            { 'ql',    [[<cmd>lua require("persistence").load({ last = true })<cr>]] },
+            { 'qd',    [[<cmd>lua require("persistence").stop()<cr>]] },
+            { '<Tab>', '<C-w>w' },
+            { 'a',     '<C-w>h' },
+            { 's',     '<C-w>j' },
+            { 'w',     '<C-w>k' },
+            { 'd',     '<C-w>l' },
           },
           options = {
             silent = false
@@ -30,7 +35,7 @@ return {
         -- }}}
 
         --{{{ control
-        { '<C-n>', '<CMD>:NeoTreeFloatToggle<CR>',    options = { silent = false } },
+        { '<C-n>', '<CMD>:NvimTreeToggle<CR>',        options = { silent = false } },
         { '<C-`>', ':ToggleTerm direction=float<CR>', options = { silent = false } },
         -- }}}
 
