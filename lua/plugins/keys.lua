@@ -27,6 +27,7 @@ return {
             { 's',     '<C-w>j' },
             { 'w',     '<C-w>k' },
             { 'd',     '<C-w>l' },
+            { 't',     ':Twilight<CR>' },
           },
           options = {
             silent = false
@@ -36,7 +37,7 @@ return {
 
         --{{{ control
         { '<C-n>', '<CMD>:NvimTreeToggle<CR>',        options = { silent = false } },
-        { '<C-`>', ':ToggleTerm direction=float<CR>', options = { silent = false } },
+        { '<C-m>', ':ToggleTerm direction=float<CR>', options = { silent = false } },
         -- }}}
 
         --{{{ insert mode
