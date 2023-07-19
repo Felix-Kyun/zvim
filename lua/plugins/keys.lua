@@ -10,7 +10,11 @@ return {
           '<leader>',
           {
             { '?',     ':WhichKey<CR>' },
-            { 's',     ':source %<CR>' },
+            { 'so',    ':source %<CR>' },
+            { 'ss',    ':SessionSave<CR>' },
+            { 'sd',    ':SessionDelete<CR>' },
+            { 'sr',    ':SessionRestore<CR>' },
+            { 'sf',    ':lua require("auto-session.session-lens").search_session <CR>' },
             { 'ff',    ':lua require"telescope.builtin".find_files({no_ignore=true, hidden=true})<CR>' },
             { 'fd',    ':Telescope live_grep<CR>' },
             { 'u',     ':Lazy<CR>' },
@@ -19,15 +23,14 @@ return {
             { 'zf',    ':TZFocus<CR>' },
             { 'zm',    ':TZMinimalist<CR>' },
             { 'za',    ':TZAtaraxis<CR>' },
-            { 'qs',    [[<cmd>lua require("persistence").load()<cr>]] },
-            { 'ql',    [[<cmd>lua require("persistence").load({ last = true })<cr>]] },
-            { 'qd',    [[<cmd>lua require("persistence").stop()<cr>]] },
             { '<Tab>', '<C-w>w' },
-            { 'a',     '<C-w>h' },
-            { 's',     '<C-w>j' },
-            { 'w',     '<C-w>k' },
-            { 'd',     '<C-w>l' },
+            { 'h',     '<C-w>h' },
+            { 'j',     '<C-w>j' },
+            { 'k',     '<C-w>k' },
+            { 'l',     '<C-w>l' },
             { 't',     ':Twilight<CR>' },
+            { 'b',     '`.' },
+            { 'fmt',   ':lua vim.lsp.buf.format()<CR>' }
           },
           options = {
             silent = false
@@ -37,7 +40,7 @@ return {
 
         --{{{ control
         { '<C-n>', '<CMD>:NvimTreeToggle<CR>',        options = { silent = false } },
-        { '<C-m>', ':ToggleTerm direction=float<CR>', options = { silent = false } },
+        { '<C-`>', ':ToggleTerm direction=float<CR>', options = { silent = false } },
         -- }}}
 
         --{{{ insert mode
