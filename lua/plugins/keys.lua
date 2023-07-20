@@ -13,7 +13,7 @@ return {
             { 'so',    ':source %<CR>' },
             { 'ss',    ':SessionSave<CR>' },
             { 'sd',    ':SessionDelete<CR>' },
-            { 'sr',    ':SessionRestore<CR>' },
+            { 'sr',    ':SessionLoadLast<CR>' },
             { 'sf',    ':lua require("auto-session.session-lens").search_session <CR>' },
             { 'ff',    ':lua require"telescope.builtin".find_files({no_ignore=true, hidden=true})<CR>' },
             { 'fd',    ':Telescope live_grep<CR>' },
@@ -41,6 +41,7 @@ return {
         --{{{ control
         { '<C-n>', '<CMD>:NvimTreeToggle<CR>',        options = { silent = false } },
         { '<C-`>', ':ToggleTerm direction=float<CR>', options = { silent = false } },
+        { '<C-s>', ':Telescope persisted<CR>' },
         -- }}}
 
         --{{{ insert mode

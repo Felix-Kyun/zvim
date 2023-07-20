@@ -24,13 +24,24 @@
 * ### Todo Highlighting
     ![todo](https://github.com/Felix-Kyun/zvim/blob/master/assets/todo_feature.png?raw=true)
 
-* ### Mason.nvim
+* ### Mason
     ![mason](https://github.com/Felix-Kyun/zvim/blob/master/assets/Mason.png?raw=true)
 
 * ### Which Key
     ![which key](https://github.com/Felix-Kyun/zvim/blob/master/assets/which_key.png?raw=true)
 
+* ### Session
+    ![session](https://github.com/Felix-Kyun/zvim/blob/master/assets/session.png?raw=true)
+
+* ### File Tree
+    ![file tree](https://github.com/Felix-Kyun/zvim/blob/master/assets/file_tree.png?raw=true)
   
+* ### CmdLine
+    ![Cmd Line](https://github.com/Felix-Kyun/zvim/blob/master/assets/cmdline.png?raw=true)
+
+* ### Sexy Notifications
+    ![notifications](https://github.com/Felix-Kyun/zvim/blob/master/assets/notify.png?raw=true)
+
   
 <h2>🧐 Features</h2>
 
@@ -50,6 +61,10 @@ Here're some of the project's best features:
 *   file navigation with neotree
 *   overall minimal config
 *   seasmless plugin management with lazy.nvim
+*   session management
+*   noice ui for cmdline 
+*   animated notifications
+*   floating file tree
 *   more coming boi....
 
 <h2>🛠️ Installation Steps:</h2>

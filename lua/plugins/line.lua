@@ -181,11 +181,11 @@ return {
       }
 
       -- Add components to right sections
-      ins_right {
+      --[[ ins_right {
         require('auto-session.lib').current_session_name,
         icon = '󰪶',
         color = { fg = colors.red, gui = 'bold' },
-      }
+      } ]]
 
       ins_right {
         'o:encoding',       -- option component same as &encoding in viml

@@ -1,5 +1,5 @@
 return {
-  'rmagatti/auto-session',
+  --[[ 'rmagatti/auto-session',
   config = function()
     require("auto-session").setup {
       log_level = vim.log.levels.ERROR,
@@ -16,5 +16,5 @@ return {
     vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
       noremap = true,
     })
-  end
+  end ]]
 }

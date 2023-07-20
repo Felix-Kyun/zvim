@@ -24,6 +24,8 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
     vim.opt.termguicolors = true
+    vim.cmd [[hi FloatBorder guibg=NONE]]
+    vim.cmd [[hi NormalFloat guibg=NONE]]
 
     require("nvim-tree").setup({
       sort_by = "case_sensitive",
