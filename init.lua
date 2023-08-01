@@ -10,3 +10,5 @@
 require 'options'
 require 'disable-plugins'
 require 'plugin'
+require 'neovide'
+require 'commands'

@@ -12,6 +12,38 @@ return {
       end,
     },
     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+    {
+
+      {
+        "mfussenegger/nvim-dap",
+        config = function()
+          require 'dap_config.c'
+        end
+      },
+      {
+        'rcarriga/nvim-dap-ui',
+        config = function()
+          local dapui = require("dapui")
+          dapui.setup {}
+          local dap = require 'dap'
+          dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open()
+          end
+          dap.listeners.before.event_terminated["dapui_config"] = function()
+            dapui.close()
+          end
+          dap.listeners.before.event_exited["dapui_config"] = function()
+            dapui.close()
+          end
+        end
+      },
+      {
+        'theHamsta/nvim-dap-virtual-text',
+        config = function()
+          require("nvim-dap-virtual-text").setup()
+        end
+      }
+    },
 
     -- Autocompletion
     { 'hrsh7th/nvim-cmp' },     -- Required
@@ -37,6 +69,9 @@ return {
 
     lsp.on_attach(function(client, bufnr)
       lsp.default_keymaps({ buffer = bufnr })
+      if client.server_capabilities["documentSymbolProvider"] then
+        require("nvim-navic").attach(client, bufnr)
+      end
     end)
     lsp.format_on_save({
       format_opts = {

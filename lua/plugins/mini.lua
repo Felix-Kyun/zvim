@@ -3,9 +3,16 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
-      require('mini.splitjoin').setup()
       require('mini.pairs').setup()
 
+      --split join
+      require('mini.splitjoin').setup({
+        mappings = {
+          toggle = 'gs',
+          split = '',
+          join = '',
+        }
+      })
 
       --start config
       local starter = require 'mini.starter'
