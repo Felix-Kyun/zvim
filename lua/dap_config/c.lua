@@ -5,7 +5,9 @@ local dap = require 'dap'
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = '/home/felix/.config/nvim/dap/gdb/extension/debugAdapters/bin/OpenDebugAD7',
+  -- command = '/home/felix/.config/nvim/dap/gdb/extension/debugAdapters/bin/OpenDebugAD7',
+  -- command = vim.fn.exepath('OpenDebugAD7'),
+  command = '/home/felix/.local/share/nvim/mason/bin/OpenDebugAD7',
 }
 dap.configurations.c = {
   {
