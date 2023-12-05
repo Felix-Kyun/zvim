@@ -30,7 +30,11 @@ return {
             { 'l',     '<C-w>l' },
             { 't',     ':Twilight<CR>' },
             { 'b',     '`.' },
-            { 'fmt',   ':lua vim.lsp.buf.format()<CR>' }
+            { 'fmt',   ':lua vim.lsp.buf.format()<CR>' },
+            { 'au',    ':ArduinoUpload<CR>' },
+            { 'q',     ':q<CR>' },
+            { 'dt',    ':DapToggleBreakpoint<CR>' },
+            { 'dc',    ':DapContinue<CR>' },
           },
           options = {
             silent = false

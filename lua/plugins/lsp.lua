@@ -87,6 +87,24 @@ return {
     -- (Optional) Configure lua language server for neovim
     require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+    -- Configure prettierd
+    -- require("lspconfig").prettierd.setup({
+    --   -- capabilities = require('cmp_nvim_lsp').cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    -- })
+
+    -- arduino lsp setup
+    local fqbn =
+    "esp8266:esp8266:nodemcuv2:baud=115200,wipe=none,vt=flash,mmu=3232,dbg=Disabled,lvl=None____,eesz=4M1M,non32xfer=fast,led=2,exception=disabled,ssl=basic,xtal=160,stacksmash=disabled,ip=lm2f"
+    -- fqbn = "esp8266:esp8266:nodemcuv2"
+    require 'lspconfig'.arduino_language_server.setup {
+      cmd = {
+        "arduino-language-server",
+        "-cli-config", "/path/to/arduino-cli.yaml",
+        "-fqbn",
+        fqbn
+      }
+    }
+
     lsp.setup()
     local cmp = require('cmp')
     local cmp_action = require('lsp-zero').cmp_action()
