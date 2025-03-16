@@ -1,6 +1,5 @@
 local v = vim.g
 if v.neovide then
-  require 'notify'.notify "Konichiwa nya!"
   vim.opt.guifont = "FiraCode Nerd Font:h12"
   v.neovide_scale_factor = 1
   v.neovide_scroll_animation_length = 0.3
