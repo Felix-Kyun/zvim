@@ -85,4 +85,13 @@ return {
     cmd = { "LiveServerStart", "LiveServerStop" },
     config = true,
   },
+
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "rest-nvim/rest.nvim",
+  },
 }

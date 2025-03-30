@@ -16,6 +16,7 @@ bind({
 		{ "<leader>sd", ":SessionDelete<CR>", "deletes the current session"  },
     { "<Tab>", ":tabnext<CR>", "switch to next buffer"  },
     { "<S-Tab>", ":tabprevious<CR>", "switch to previous buffer"  },
+    { "<leader>t", ":tabnew<CR>", "create new tab"  },
     { "gs", ":SplitjoinSplit<CR>", "split single line into multiple lines"  },
     { "gj", ":SplitjoinJoin<CR>", "split multiple lines into one line"  },
 		opts = { silent = true, noremap = true },
