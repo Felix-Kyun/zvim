@@ -20,21 +20,33 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.clangd.setup({
-  capabilities = capabilities,
+	capabilities = capabilities,
 })
 
 lspconfig.emmet_language_server.setup({
-  capabilities = capabilities,
+	capabilities = capabilities,
 })
 
 lspconfig.html.setup({
-  capabilities = capabilities,
+	capabilities = capabilities,
 })
 
 lspconfig.cssls.setup({
-  capabilities = capabilities,
+	capabilities = capabilities,
 })
-
+lspconfig.bashls.setup({
+	capabilities = capabilities,
+})
+lspconfig.eslint.setup({
+	capabilities = capabilities,
+	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	settings = {
+		format = { enable = true },
+		codeAction = { enable = true },
+		lint = { enable = true },
+		workingDirectory = { mode = "auto" },
+	},
+})
 
 -- none ls
 local null_ls = require("null-ls")
@@ -43,19 +55,17 @@ null_ls.setup({
 		-- formatters
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.prettierd,
--- 		-- null_ls.builtins.formatting.black,
+		-- 		-- null_ls.builtins.formatting.black,
 		-- null_ls.builtins.formatting.codespell,
-    null_ls.builtins.formatting.clang_format,
-    null_ls.builtins.diagnostics.checkmake,
-		require("none-ls.code_actions.eslint_d").with({ condition = require("utils.has_eslint_config") }),
-		require("none-ls.diagnostics.eslint_d").with({ condition = require("utils.has_eslint_config") }),
-		require("none-ls.formatting.eslint_d").with({ condition = require("utils.has_eslint_config") }),
-    -- require("none-ls.diagnostics.ruff"),
-    -- require("none-ls.formatting.ruff"),
-
+		null_ls.builtins.formatting.clang_format,
+		null_ls.builtins.diagnostics.checkmake,
+		-- require("none-ls.code_actions.eslint_d").with({ condition = require("utils.has_eslint_config") }),
+		-- require("none-ls.diagnostics.eslint_d").with({ condition = require("utils.has_eslint_config") }),
+		-- require("none-ls.formatting.eslint_d").with({ condition = require("utils.has_eslint_config") }),
+		-- require("none-ls.diagnostics.ruff"),
+		-- require("none-ls.formatting.ruff"),
 	},
 })
-
 
 require("mason-null-ls").setup({
 	ensure_installed = nil,

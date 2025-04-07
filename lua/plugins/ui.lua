@@ -61,6 +61,7 @@ return {
   -- fzf
   {
     "ibhagwan/fzf-lua",
+    event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = run("config.fzf-lua"),
   },
@@ -123,6 +124,25 @@ return {
   },
   {
     "brenoprata10/nvim-highlight-colors",
+    opts = {},
+  },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    priority = 1000, 
+    config = function()
+      require("tiny-inline-diagnostic").setup()
+      vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+    end,
+  },
+  {
+    "folke/twilight.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "folke/zen-mode.nvim",
+    event = "VeryLazy",
     opts = {},
   },
 }

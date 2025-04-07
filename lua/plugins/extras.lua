@@ -91,7 +91,23 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  -- {
+  --   "rest-nvim/rest.nvim",
+  -- },
   {
-    "rest-nvim/rest.nvim",
+    "mistweaverco/kulala.nvim",
+    keys = {
+      { "<leader>Rs", desc = "Send request" },
+      { "<leader>Ra", desc = "Send all requests" },
+      { "<leader>Rb", desc = "Open scratchpad" },
+    },
+    ft = { "http", "rest" },
+    opts = {
+      global_keymaps = true,
+    },
+  },
+  {
+    "declancm/maximize.nvim",
+    config = true,
   },
 }

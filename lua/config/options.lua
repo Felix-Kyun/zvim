@@ -38,7 +38,7 @@ local options = {
   relativenumber = true, -- set relative numbered lines
   numberwidth = 2,      -- set number column width to 2 {default 4}
   signcolumn = "yes",   -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,         -- display lines as one long line
+  wrap = true,         -- display lines as one long line
   scrolloff = 8,        -- is one of my fav
   sidescrolloff = 8,
   softtabstop = 2,
@@ -52,9 +52,18 @@ end
 vim.opt.shortmess:append("c")
 
 -- Set the formatprg for json files to jq for rest.nvim
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "json" },
-  callback = function()
-    vim.api.nvim_set_option_value("formatprg", "jq", { scope = "local" })
-  end,
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = { "json" },
+--   callback = function()
+--     vim.api.nvim_set_option_value("formatprg", "jq", { scope = "local" })
+--   end,
+-- })
+vim.filetype.add({
+  extension = {
+    ["http"] = "http",
+  },
+})
+
+vim.diagnostic.config({
+  virtual_text = false,
 })
