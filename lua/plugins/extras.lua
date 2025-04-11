@@ -110,4 +110,9 @@ return {
     "declancm/maximize.nvim",
     config = true,
   },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async" },
+    config = run("config.ufo"),
+  },
 }

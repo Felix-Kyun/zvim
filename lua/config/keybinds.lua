@@ -15,7 +15,7 @@ bind({
 		{ "<leader>ss", ":SessionSave<CR>", "saves the current session"  },
 		{ "<leader>sd", ":SessionDelete<CR>", "deletes the current session"  },
 		{ "<leader>z", ":ZenMode<CR>", "Toggle Zen Mode"  },
-		{ "<leader>t", ":Twilight<CR>", "Toggle Twilight Mode"  },
+		{ "<leader>T", ":Twilight<CR>", "Toggle Twilight Mode"  },
 		{ "<leader>m", ":Maximize<CR>", "Toggle Window Maximize Mode"  },
     { "<leader>r", ":RestNvim<CR>", "runs the selected rest api request"  },
     { "<Tab>", ":tabnext<CR>", "switch to next buffer"  },

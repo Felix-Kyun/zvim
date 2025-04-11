@@ -67,3 +67,5 @@ vim.filetype.add({
 vim.diagnostic.config({
   virtual_text = false,
 })
+
+require "utils.format_on_save"
