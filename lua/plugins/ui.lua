@@ -1,148 +1,146 @@
 local run = require("utils.run")
 return {
 
-  -- theme
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    -- lazy = true, -- somehow this setting lazy = true causes it to not load properly
-    config = run("config.catppuccin"),
-    priority = 1000,
-  },
+	-- theme
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		-- lazy = true, -- somehow this setting lazy = true causes it to not load properly
+		config = run("config.catppuccin"),
+		priority = 1000,
+	},
 
-  -- noice.nvim
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.opt.lazyredraw = false
-    end,
-    opts = run("config.noice"),
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      {
-        "rcarriga/nvim-notify",
-        opts = {
-          background_colour = "#000000",
-          top_down = false,
-        },
-      },
-    },
-  },
+	-- noice.nvim
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.opt.lazyredraw = false
+		end,
+		opts = run("config.noice"),
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			{
+				"rcarriga/nvim-notify",
+				opts = {
+					background_colour = "#000000",
+					top_down = false,
+				},
+			},
+		},
+	},
 
-  -- dropbar
-  {
-    "Bekaboo/dropbar.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-    },
-  },
+	-- dropbar
+	{
+		"Bekaboo/dropbar.nvim",
+		dependencies = {
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+		},
+	},
 
-  -- indent blankline
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {},
-  },
+	-- lualine
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = run("config.lualine"),
+	},
 
-  -- lualine
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = run("config.lualine"),
-  },
+	-- rainbow delimiters
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+	},
 
-  -- rainbow delimiters
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-  },
+	-- fzf
+	{
+		"ibhagwan/fzf-lua",
+		event = "VeryLazy",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = run("config.fzf-lua"),
+	},
 
-  -- fzf
-  {
-    "ibhagwan/fzf-lua",
-    event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = run("config.fzf-lua"),
-  },
+	-- file tree
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		config = run("config.neotree"),
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	},
 
-  -- file tree
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    config = run("config.neotree"),
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
-  },
+	-- which_key
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 
-  -- which_key
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+	-- terminal
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {},
+	},
 
-  -- terminal
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {},
-  },
+	-- lksp progress
+	-- {
+	-- 	"linrongbin16/lsp-progress.nvim",
+	-- 	config = function()
+	-- 		require("lsp-progress").setup()
+	-- 	end,
+	-- },
 
-  -- lksp progress
-  -- {
-  -- 	"linrongbin16/lsp-progress.nvim",
-  -- 	config = function()
-  -- 		require("lsp-progress").setup()
-  -- 	end,
-  -- },
+	-- lsp related maybe
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			bind = true,
+			handler_opts = {
+				border = "rounded",
+			},
+		},
+	},
 
-  -- lsp related maybe
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "InsertEnter",
-    opts = {
-      bind = true,
-      handler_opts = {
-        border = "rounded",
-      },
-    },
-  },
-
-  -- copilot chat
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      { "github/copilot.vim" },                    -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-    },
-    build = "make tiktoken",
-    opts = {},
-  },
-  {
-    "brenoprata10/nvim-highlight-colors",
-    opts = {},
-  },
-  {
-    "rachartier/tiny-inline-diagnostic.nvim",
-    event = "VeryLazy",
-    priority = 1000, 
-    config = function()
-      require("tiny-inline-diagnostic").setup()
-      vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
-    end,
-  },
-  {
-    "folke/twilight.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
-    "folke/zen-mode.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+	-- copilot chat
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+		},
+		build = "make tiktoken",
+		opts = {},
+	},
+	{
+		"brenoprata10/nvim-highlight-colors",
+		opts = {},
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy",
+		priority = 1000,
+		config = function()
+			require("tiny-inline-diagnostic").setup()
+			-- vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+		end,
+	},
+	{
+		"folke/twilight.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"folke/zen-mode.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"shellRaining/hlchunk.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = run("config.hlchunk"),
+	},
 }

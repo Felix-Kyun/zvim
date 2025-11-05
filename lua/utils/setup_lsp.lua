@@ -13,14 +13,17 @@
    capabilities = capabilities,
   }
 --]]
-local lspconfig = require("lspconfig")
 
-return function (map, default)
-  for key, value in pairs(map) do
-    if type(value) == "table" then
-      lspconfig[key].setup(value)
-    else
-      lspconfig[value].setup(default)
-    end
-  end
+local lsp = vim.lsp
+
+return function(map, default)
+	for key, value in pairs(map) do
+		if type(key) == "number" then
+			lsp.enable(value)
+			lsp.config(value, default)
+		else
+			lsp.enable(key)
+			lsp.config(key, value)
+		end
+	end
 end

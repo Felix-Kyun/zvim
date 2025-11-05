@@ -115,4 +115,57 @@ return {
     dependencies = { "kevinhwang91/promise-async" },
     config = run("config.ufo"),
   },
+  {
+    "gbprod/yanky.nvim",
+    dependencies = {
+      { "kkharji/sqlite.lua" },
+    },
+    opts = {
+      ring = { storage = "sqlite" },
+    },
+    keys = {
+      {
+        "<leader>y",
+        "<cmd>YankyRingHistory<cr>",
+        mode = { "n", "x" },
+        desc = "Open Yank History",
+      },
+      {
+        "y",
+        "<Plug>(YankyYank)",
+        mode = { "n", "x" },
+        desc = "Yank text",
+      },
+      {
+        "p",
+        "<Plug>(YankyPutAfter)",
+        mode = { "n", "x" },
+        desc = "Put yanked text after cursor",
+      },
+      {
+        "P",
+        "<Plug>(YankyPutBefore)",
+        mode = { "n", "x" },
+        desc = "Put yanked text before cursor",
+      },
+      {
+        "gp",
+        "<Plug>(YankyGPutAfter)",
+        mode = { "n", "x" },
+        desc = "Put yanked text after selection",
+      },
+      {
+        "gP",
+        "<Plug>(YankyGPutBefore)",
+        mode = { "n", "x" },
+        desc = "Put yanked text before selection",
+      },
+      { "<leader>p", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
+      { "<leader>n", "<Plug>(YankyNextEntry)",     desc = "Select next entry through yank history" },
+    },
+    {
+      "danymat/neogen",
+      config = true,
+    },
+  },
 }

@@ -2,7 +2,7 @@ local run = require("utils.run")
 return {
 	{
 		"williamboman/mason.nvim",
-		config = run("config.mason"),
+		config = run("config.lsp"),
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 		},
@@ -21,8 +21,8 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"onsails/lspkind.nvim",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
 		},
 	},
 	{
@@ -31,5 +31,8 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		},
+	},
+	{
+		"mfussenegger/nvim-lint",
 	},
 }

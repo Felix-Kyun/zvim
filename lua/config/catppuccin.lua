@@ -1,18 +1,19 @@
 require("catppuccin").setup({
 	flavor = "mocha",
 	background = {
-		dark = "frappe",
+		dark = vim.g.neovide and "mocha" or "frappe",
 	},
-	transparent_background = true,
+	term_colors = true,
+	transparent_background = not vim.g.neovide,
 	default_integrations = true,
 	integrations = {
 		treesitter = true,
-    headlines = true,
+		headlines = true,
 		treesitter_context = true,
 		notify = true,
 		noice = true,
 		mason = true,
-    copilot_vim = true,
+		copilot_vim = true,
 		neotree = true,
 		dap = true,
 		dap_ui = true,

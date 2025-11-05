@@ -1,35 +1,20 @@
 local bind = require("utils.keybind")
+local neovide = require("utils.neovide")
 
 bind({
 	n = {
-		{ "<C-N>", ":Neotree toggle<CR>", "opens the file tree to the right" },
-		{
-			"<C-P>",
-			":FzfLua buffers<CR>",
-			"opens the currently open buffers in a floating pane" ,
-		},
-		{ "<leader>ff", ":FzfLua files<CR>", "opens the file finder"  },
-		{ "<leader>fd", ":FzfLua live_grep<CR>", "opens the live grep"  },
-		{ "<C-\\>", "<esc>:ToggleTerm direction=float<CR>", { desc = "opens the terminal in floating pane" } },
-		{ "<leader>ls", ":SessionSearch<CR>", "opens the saved session selector"  },
-		{ "<leader>ss", ":SessionSave<CR>", "saves the current session"  },
-		{ "<leader>sd", ":SessionDelete<CR>", "deletes the current session"  },
-		{ "<leader>z", ":ZenMode<CR>", "Toggle Zen Mode"  },
-		{ "<leader>T", ":Twilight<CR>", "Toggle Twilight Mode"  },
-		{ "<leader>m", ":Maximize<CR>", "Toggle Window Maximize Mode"  },
-    { "<leader>r", ":RestNvim<CR>", "runs the selected rest api request"  },
-    { "<Tab>", ":tabnext<CR>", "switch to next buffer"  },
-    { "<S-Tab>", ":tabprevious<CR>", "switch to previous buffer"  },
-    { "<leader>t", ":tabnew<CR>", "create new tab"  },
-    -- { "<leader>r", ":Rest run<CR>", "runs the selected rest api request"  },
-    { "gs", ":SplitjoinSplit<CR>", "split single line into multiple lines"  },
-    { "gj", ":SplitjoinJoin<CR>", "split multiple lines into one line"  },
+		{ "<C-n>", ":Neotree toggle<CR>", "opens the file tree to the right" },
+		{ "<leader>z", ":ZenMode<CR>", "Toggle Zen Mode" },
+		{ "<leader>T", ":Twilight<CR>", "Toggle Twilight Mode" },
+		{ "<leader>m", ":Maximize<CR>", "Toggle Window Maximize Mode" },
+		{ "<leader>r", ":RestNvim<CR>", "runs the selected rest api request" },
+		{ "<Tab>", ":tabnext<CR>", "switch to next buffer" },
+		{ "<S-Tab>", ":tabprevious<CR>", "switch to previous buffer" },
+		{ "<leader>t", ":tabnew<CR>", "create new tab" },
+		{ "gs", ":SplitjoinSplit<CR>", "split single line into multiple lines" },
+		{ "gj", ":SplitjoinJoin<CR>", "split multiple lines into one line" },
 		opts = { silent = true, noremap = true },
 	},
-  [{"t"}] = {
-		{ "<esc>", require "toggleterm".toggle, "closes the terminal in floating pane"  },
-		{ "<C-\\>", require "toggleterm".toggle, "closes the terminal in floating pane"  },
-  }
 })
 
 --[[ plugin related ]]
@@ -50,41 +35,84 @@ bind({
 		{ "K", buf.hover },
 	},
 	[{ "n", "v" }] = {
-		{ "<leader>ca", buf.code_action, "Code Actions"  },
-		{ "<leader>fmt", buf.format, "Format Code"  },
-		{ "<leader>gd", buf.definition, "Show Defination"  },
+		{ "<leader>ca", buf.code_action, "Code Actions" },
+		{ "<leader>fmt", buf.format, "Format Code" },
+		{ "<leader>gd", buf.definition, "Show Defination" },
 	},
 })
 
--- nvim cmp
--- local cmp = require("cmp")
--- bind({
--- 	i = {
--- 		{
--- 			"<C-y>",
--- 			cmp.mapping.confirm({ select = true }),
--- 			{ desc = "Confirm slected completions" },
--- 		},
--- 		{ "<C-Space>", cmp.mapping.complete(), "Auto complete"  },
--- 		{
--- 			"<C-e>",
--- 			cmp.mapping.abort(),
--- 			{ desc = "Abort Selection" },
--- 		},
---
--- 		{ "<C-b>", cmp.mapping.scroll_docs(-4), "Scroll doc up"  },
--- 		{ "<C-f>", cmp.mapping.scroll_docs(4), "Scroll doc down"  },
--- 		opts = { silent = true, noremap = true },
--- 	},
--- })
-
--- tmux navigator 
+-- window navigation
 bind({
-  n = {
-    { "<C-h>", ":TmuxNavigateLeft<cr>", "Navigate Left"  },
-    { "<C-j>", ":TmuxNavigateDown<cr>", "Navigate Down"  },
-    { "<C-k>", ":TmuxNavigateUp<cr>", "Navigate Up"  },
-    { "<C-l>", ":TmuxNavigateRight<cr>", "Navigate Right"  },
-  },
-  opts = { silent = true, noremap = true },
+	n = {
+		{ "<C-h>", "<C-w>h", "Navigate Left" },
+		{ "<C-j>", "<C-w>j", "Navigate Down" },
+		{ "<C-k>", "<C-w>k", "Navigate Up" },
+		{ "<C-l>", "<C-w>l", "Navigate Right" },
+	},
+	opts = { silent = true, noremap = true },
 })
+
+-- clipboard
+bind({
+	[{ "n", "v", "t" }] = {
+		{ "<SC-C>", '"+y', "Yank to system clipboard" },
+		{ "<SC-V>", '"+p', "Paste from system clipboard" },
+		{ "<SC-X>", '"+d', "Cut to system clipboard" },
+	},
+	[{ "i" }] = {
+		{ "<SC-V>", '<C-r>"+<C-o>p', "Yank to system clipboard" },
+	},
+})
+
+bind({
+	n = {
+		{ "<leader>ls", ":AutoSession search<CR>", "opens the saved session selector" },
+		{ "<leader>ss", ":AutoSession save<CR>", "saves the current session" },
+		{ "<leader>sd", ":AutoSession delete<CR>", "deletes the current session" },
+	},
+})
+
+-- fzf lua
+bind({
+	n = {
+		{ "<leader>ff", ":FzfLua files<CR>", "Find Files" },
+		{ "<leader>fd", ":FzfLua live_grep<CR>", "Live Grep" },
+		{ "<C-P>", ":FzfLua buffers<CR>", "List Buffers" },
+		{ "<leader>fh", ":FzfLua help_tags<CR>", "Help Tags" },
+		{ "<leader>fc", ":FzfLua commands<CR>", "Commands" },
+	},
+})
+
+-- terminal
+bind({
+	t = {
+		{ "<esc>", require("toggleterm").toggle, "closes the terminal in floating pane" },
+		{ "<C-t>", require("toggleterm").toggle, "closes the terminal in floating pane" },
+	},
+
+	n = {
+		{ "<C-t>", "<esc>:ToggleTerm direction=float<CR>", { desc = "opens the terminal in floating pane" } },
+	},
+})
+
+if vim.g.neovide then
+	bind({
+		[{ "n", "v" }] = {
+			{
+				{ "<C-+>", "<C-ScrollWheelUp>" },
+				neovide.scale.increase,
+				"Increase Neovide Scale Factor",
+			},
+			{
+				{ "<C-->", "<C-ScrollWheelDown>" },
+				neovide.scale.decrease,
+				"Decrease Neovide Scale Factor",
+			},
+			{
+				"<C-0>",
+				neovide.scale.reset,
+				"Reset Neovide Scale Factor",
+			},
+		},
+	})
+end

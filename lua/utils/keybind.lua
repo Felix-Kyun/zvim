@@ -1,9 +1,10 @@
--- bind.nvim v0.2
+-- bind.nvim v0.3
 --[[
   this function expects a keymap table in the following schema:
   keybind_map = {
     mode = {
       {"keys", "cmd", "description"},
+      {{ "key1", "key2" }, "cmd", "description"},
       { "keys", "cmd", { desc = "", noremap = true, ... } },
       [opts_all = { silent = true, ... }]
     },
@@ -32,10 +33,10 @@ return function(keybind_map)
 
 			-- error checking
 			if not key then
-				return error("bind.lua expected String as key but got nil")
+				return error("[bind.lua] expected key as string or string[] but got nil")
 			end
 			if not cmd then
-				return error("bind.lua expected string/function as cmd but got nil")
+				return error("[bind.lua] expected string/function as cmd but got nil")
 			end
 
 			-- copy and override the opts for each keybind
@@ -47,8 +48,14 @@ return function(keybind_map)
 				final_opts[k] = v
 			end
 
-			-- set the keybind
-			vim.keymap.set(mode, key, cmd, final_opts)
+			-- check if key is a table or just a string
+			if type(key) == "table" then
+				for _, k in ipairs(key) do
+					vim.keymap.set(mode, k, cmd, final_opts)
+				end
+			else
+				vim.keymap.set(mode, key, cmd, final_opts)
+			end
 		end
 	end
 end

@@ -7,7 +7,7 @@
 -- 				nvim config [init.lua]
 
 -- lazy.nvim
-require "config.options"
-require "config.neovide"
-require "config.lazy"
-require "config.keybinds"
+require("config.neovide")
+require("config.options")
+require("config.lazy")
+require("config.keybinds")
