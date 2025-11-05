@@ -38,6 +38,9 @@ bind({
 		{ "<leader>ca", buf.code_action, "Code Actions" },
 		{ "<leader>fmt", buf.format, "Format Code" },
 		{ "<leader>gd", buf.definition, "Show Defination" },
+		{ "<leader>gr", buf.references, "Show References" },
+		{ "<leader>gi", buf.implementation, "Show Implementation" },
+		{ "<leader>rn", buf.rename, "Rename Symbol" },
 	},
 })
 

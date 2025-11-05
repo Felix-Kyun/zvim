@@ -10,6 +10,7 @@ return {
 	"neovim/nvim-lspconfig",
 	{
 		"nvimtools/none-ls.nvim",
+		config = run("config.null_ls"),
 		dependencies = {
 			"nvimtools/none-ls-extras.nvim",
 			"jay-babu/mason-null-ls.nvim",
